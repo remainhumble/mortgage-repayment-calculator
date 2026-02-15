@@ -13,6 +13,7 @@
   --slate-500: hsl(200, 26%, 54%);
   --slate-700: hsl(200, 24%, 40%);
   --slate-900: hsl(202, 55%, 16%);
+  --lime: hsl(61, 70%, 52%);
 }
 
 html,
@@ -20,9 +21,36 @@ body {
   width: 100%;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 500;
-  color: #122f3f;
+  color: var(--slate-700);
+}
+
+h1, .radio{
+    color: var(--slate-900);
 }
 
 p {
   font-size: 16px;
+}
+
+.number-input {
+  border: 1.5px solid var(--slate-300);
+  border-radius: 3px;
+}
+
+input[type="number"] {
+  width: 100%;
+margin-bottom: 1rem;
+}
+
+.radio {
+  border: 1.5px solid var(--slate-300);
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+}
+
+.calculate-btn {
+  background-color: var(--lime);
+  color: var(--slate-900);
+  padding: 0.5rem 1rem;
+  border-radius: 22px;
 }
