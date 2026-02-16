@@ -39,7 +39,14 @@ p {
 
 input[type="number"] {
   width: 100%;
-margin-bottom: 1rem;
+  
+}
+
+.addon {
+  background-color: var(--slate-100);
+  color: var(--slate-700);
+  width: fit-content;
+  padding: 0.5rem;
 }
 
 .radio {
@@ -53,4 +60,10 @@ margin-bottom: 1rem;
   color: var(--slate-900);
   padding: 0.5rem 1rem;
   border-radius: 22px;
+}
+
+.left-addon, .right-addon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
