@@ -25,17 +25,18 @@ const Calculator = () => {
                 <div className='addon'>%</div>
             </div>
             <br></br>
-            <div className='mortgage-type'>
-                <label for="mortgage-type">Mortgage Type</label><br></br>
-                <div className='radio'>
-                    <input type="radio" name="mortgage-type" value="repayment" />
-                    <label for="repayment" className='font-bold'>Repayment</label><br></br>
-                </div>
-                <div className='radio'>
-                    <input type="radio" name="mortgage-type" value="interest-only" />
-                    <label for="interest-only" className='font-bold'>Interest Only</label><br></br>
-                </div>
-            </div>
+
+            <fieldset className='mortgage-type flex flex-col'>
+                <legend for="mortgage-type">Mortgage Type</legend><br></br>
+                <label className='radio font-bold'>
+                    <input type="radio" name="mortgage-type" value="repayment" id="repayment"/>
+                    Repayment
+                </label>
+                <label className='radio font-bold'>
+                    <input type="radio" name="mortgage-type" value="interest-only" id="interest-only" />
+                    Interest Only
+                </label>
+            </fieldset>
             <button className='flex calculate-btn font-bold'><img src="./assets/images/icon-calculator.svg" alt="Calculate" />Calculate Repayments</button>
         </div>
     )
