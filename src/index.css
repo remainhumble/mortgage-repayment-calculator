@@ -24,6 +24,14 @@ body {
   color: var(--slate-700);
 }
 
+.calculator {
+padding: 17px;
+}
+
+.inputs {
+  margin-top: 20px;
+}
+
 h1, .radio{
     color: var(--slate-900);
 }
@@ -60,6 +68,7 @@ input[type="number"] {
   color: var(--slate-900);
   padding: 0.5rem 1rem;
   border-radius: 22px;
+  margin-top: 1.5rem;
 }
 
 .left-addon, .right-addon {
