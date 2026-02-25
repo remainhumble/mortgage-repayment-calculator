@@ -6,7 +6,7 @@ import Results from './Results'
 const App = () => {
   return (
     <>
-    <div className="flex lg:flex-row flex-col">
+    <div className="flex lg:flex-row flex-col lg:scale-[0.7]">
       <Calculator />
       <Results />
       </div>
