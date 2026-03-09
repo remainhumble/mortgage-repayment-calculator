@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // developers should ensure they are familiar with React Hooks and the library's API to maximize its benefits
 import "./index.css";
 
+
 const Calculator = () => {
   const [mortgageAmount, setMortgageAmount] = useState("");
   const [mortgageTerm, setMortgageTerm] = useState("");
@@ -22,7 +23,7 @@ const Calculator = () => {
   return (
     <>
       <form
-        className="calculator bg-white lg:rounded-bl-[25px] lg:rounded-tl-[25px] w-full"
+        className="calculator bg-white lg:rounded-bl-[25px] lg:rounded-tl-[25px] w-full "
         onSubmit={handleSubmit((data) => console.log(data))}
       >
         <h1 className="text-3xl font-bold">Mortgage Calculator</h1>
@@ -46,7 +47,7 @@ const Calculator = () => {
             <br></br>
           </div>
           {errors.mortgageAmount && (
-            <p style={{ color: "red" }}>{errors.mortgageAmount.message}</p>
+            <p style={{ color: "red" }}>{JSON.stringify(errors.mortgageAmount.message)}</p>
           )}
           <br />
           <label htmlFor="mortgage-term">Mortgage Term</label>
@@ -65,7 +66,7 @@ const Calculator = () => {
             <div className="addon">years</div>
           </div>
           {errors.mortgageTerm && (
-            <p style={{ color: "red" }}>{errors.mortgageTerm.message}</p>
+            <p style={{ color: "red" }}>{JSON.stringify(errors.mortgageTerm.message)}</p>
           )}
           <br></br>
           <label htmlFor="interest-rate">Interest Rate</label>
@@ -83,7 +84,7 @@ const Calculator = () => {
             <div className="addon">%</div>
           </div>
           {errors.interestRate && (
-            <p style={{ color: "red" }}>{errors.interestRate.message}</p>
+            <p style={{ color: "red" }}>{JSON.stringify(errors.interestRate.message)}</p>
           )}
           <br></br>
           <fieldset className="mortgage-type flex flex-col gap-2.5">
@@ -119,6 +120,7 @@ const Calculator = () => {
             </button>
           </div>
         </div>
+
       </form>
     </>
   );
