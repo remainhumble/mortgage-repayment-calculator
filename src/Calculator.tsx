@@ -2,17 +2,12 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // developers should ensure they are familiar with React Hooks and the library's API to maximize its benefits
 import "./index.css";
 
-
 const Calculator = () => {
   const [mortgageAmount, setMortgageAmount] = useState("");
   const [mortgageTerm, setMortgageTerm] = useState("");
   const [interestRate, setInterestRate] = useState("");
 
-
-
-  const calculateRepayments = () => {
-  
-  };
+  const calculateRepayments = () => {};
 
   const {
     register,
@@ -33,12 +28,20 @@ const Calculator = () => {
         <div className="inputs">
           <label htmlFor="mortgage-amount">Mortgage Amount</label>
           <br></br>
-          <div className="left-addon">
-            <div className="addon">£</div>
+          <div
+            className={`left-addon ${errors.mortgageAmount ? "border-[#d73328]" : "border-slate-700"}`}
+          >
+            <div
+              className={`addon pound ${errors.mortgageAmount ? "bg-[#d73328] text-white" : "bg-slate-100 text-slate-700"}`}
+            >
+              £
+            </div>
             <input
               type="number"
               id="mortgage-amount"
-              className="number-input"
+              className={`number-input ${
+                errors.mortgageAmount ? "border-[1.5px] border-solid border-[hsl(4,69%,50%)] rounded-[0_6px_6px_0]" : ""
+              }`}
               {...register("mortgageAmount", {
                 required: "This field is required",
                 min: { value: 1, message: "Must be greater than zero" },
@@ -47,7 +50,9 @@ const Calculator = () => {
             <br></br>
           </div>
           {errors.mortgageAmount && (
-            <p style={{ color: "red" }}>{JSON.stringify(errors.mortgageAmount.message)}</p>
+            <p style={{ color: "#d73328" }}>
+              {JSON.stringify(errors.mortgageAmount.message)}
+            </p>
           )}
           <br />
           <label htmlFor="mortgage-term">Mortgage Term</label>
@@ -56,17 +61,21 @@ const Calculator = () => {
             <input
               type="number"
               id="mortgage-term"
-              className="number-input"
+              className={`number-input ${
+                errors.mortgageTerm ? "border-[1.5px] border-solid border-[hsl(4,69%,50%)]  rounded-[6px_0_0_6px]" : ""
+              }`}
               {...register("mortgageTerm", {
                 required: "This field is required",
                 min: { value: 1, message: "Must be greater than zero" },
               })}
             />
 
-            <div className="addon">years</div>
+            <div className={`addon years ${errors.mortgageTerm ? "bg-[#d73328] text-white" : "bg-slate-100"}`}>years</div>
           </div>
           {errors.mortgageTerm && (
-            <p style={{ color: "red" }}>{JSON.stringify(errors.mortgageTerm.message)}</p>
+            <p style={{ color: "#d73328" }}>
+              {JSON.stringify(errors.mortgageTerm.message)}
+            </p>
           )}
           <br></br>
           <label htmlFor="interest-rate">Interest Rate</label>
@@ -75,16 +84,20 @@ const Calculator = () => {
             <input
               type="number"
               id="interest-rate"
-              className="number-input"
+               className={`number-input ${
+                errors.interestRate ? "border-[1.5px] border-solid border-[hsl(4,69%,50%)]  rounded-[6px_0_0_6px]" : ""
+              }`}
               {...register("interestRate", {
                 required: "This field is required",
                 min: { value: 0, message: "Must be a positive number" },
               })}
             />
-            <div className="addon">%</div>
+            <div className={`addon percent ${errors.interestRate ? "bg-[#d73328]	text-white" : "bg-slate-100"}`}>%</div>
           </div>
           {errors.interestRate && (
-            <p style={{ color: "red" }}>{JSON.stringify(errors.interestRate.message)}</p>
+            <p style={{ color: "#d73328" }}>
+              {JSON.stringify(errors.interestRate.message)}
+            </p>
           )}
           <br></br>
           <fieldset className="mortgage-type flex flex-col gap-2.5">
@@ -108,7 +121,7 @@ const Calculator = () => {
               Interest Only
             </label>
           </fieldset>
-     
+
           <div className="flex gap-2.5 mt-5">
             <button
               onClick={calculateRepayments}
@@ -120,7 +133,6 @@ const Calculator = () => {
             </button>
           </div>
         </div>
-
       </form>
     </>
   );

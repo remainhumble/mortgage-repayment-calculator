@@ -94,19 +94,19 @@ legend {
   margin: 0.75rem 0;
 }
 
-.left-addon .addon {
-  background-color: var(--slate-100);
-  color: var(--slate-700);
+.addon {
+  /* color: var(--slate-700); */
   padding: 0.25rem 0.5rem;
-  border-radius: 5px 0 0 5px;
 }
 
-.addon {
-  background-color: var(--slate-100);
-  color: var(--slate-700);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0 5px 5px 0;
+.pound {
+  border-radius: 6px 0 0 6px;
 }
+
+.years, .percent {
+  border-radius: 0 6px 6px 0;
+}
+
 .results {
   padding: 17px;
 }
