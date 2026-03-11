@@ -60,18 +60,63 @@ p {
 
 input[type="number"] {
   width: 100%;
-  padding: 0 1rem;
+  padding: 0.25rem 0.5rem;
   font-weight: 700;
+  color: var(--slate-900);
+  outline: none;
+}
+
+
+/* when the input lives inside an addon wrapper, highlight the wrapper too
+   also catch the occasional :active state on the input using :has */
+.left-addon:focus-within,
+.right-addon:focus-within,
+.left-addon:has(input:active),
+.right-addon:has(input:active)
+  {
+    border-color: var(--lime);
+    border-width: 2px;
+  }
+
+/* give the addon itself a lime background when its input is active */
+.left-addon:focus-within .addon,
+.right-addon:focus-within .addon {
+  background-color: var(--lime);
   color: var(--slate-900);
 }
 
 .radio {
   border: 1px solid var(--slate-700);
-  border-radius: 5px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+}
+
+input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--lime);
+}
+
+.radio:has(input:checked) {
+  background-color: hsl(61, 73%, 81%);
+  border-color: var(--lime);
+  border-width: 2px;
+}
+
+input[type="radio"]:checked {
+  border-color: var(--lime);
+  background-color: var(--lime);
 }
 
 .radio input {
-  margin: 12px;
+  margin: 9px;
+}
+
+.radio input:active {
+  background-color: var(--lime);
+  border-color: var(--lime); /* Change border color when checked */
 }
 
 .calculate-btn {
@@ -86,7 +131,7 @@ input[type="number"] {
 .right-addon {
   display: flex;
   border: 1px solid var(--slate-700);
-  border-radius: 6px;
+  border-radius: 3px;
   margin: 0.75rem 0;
 }
 
@@ -95,16 +140,17 @@ legend {
 }
 
 .addon {
-  /* color: var(--slate-700); */
-  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
 }
 
 .pound {
-  border-radius: 6px 0 0 6px;
+  border-radius: 3px 0 0 3px;
 }
 
-.years, .percent {
-  border-radius: 0 6px 6px 0;
+.years,
+.percent {
+  border-radius: 0 3px 3px 0;
 }
 
 .results {
