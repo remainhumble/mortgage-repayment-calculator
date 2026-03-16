@@ -85,7 +85,7 @@ input[type="number"] {
 
 .radio {
   border: 1px solid var(--slate-700);
-  border-radius: 3px;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
   padding: 0.25rem 0.5rem;
@@ -130,7 +130,7 @@ input[type="radio"]:checked {
 .right-addon {
   display: flex;
   border: 1px solid var(--slate-700);
-  border-radius: 3px;
+  border-radius: 6px;
   margin: 0.75rem 0;
 }
 
@@ -144,21 +144,23 @@ legend {
 }
 
 .pound {
-  border-radius: 3px 0 0 3px;
+  border-radius: 6px 0 0 6px;
 }
 
 .years,
 .percent {
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 6px 6px 0;
 }
 
 .results {
   padding: 35px;
+  bottom: 0;
+  right: 0;
 }
 
 @media (min-width: 760px) {
-  .calculator {
+  .calculator, .results {
     padding: 36px;
-    width: 50%;
+    max-width: 50%;
   }
 }

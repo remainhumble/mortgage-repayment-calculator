@@ -9,16 +9,22 @@ type FormValues = {
   selectedOption: "repayment" | "interest-only" | "";
 };
 
-const Calculator = () => {
+interface CalculatorProps {
+  onCalculate: (data: FormValues) => void;
+}
+
+const Calculator = ({ onCalculate }: CalculatorProps) => {
   const [selectedOption, setSelectedOption] = useState<
     "repayment" | "interest-only" | ""
   >(""); // Track selected value
 
-  const calculateRepayments = () => {};
-
   // Handle radio change
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value as "repayment" | "interest-only");
+  };
+
+  const onSubmit = (data: FormValues) => {
+    onCalculate(data);
   };
 
   const {
@@ -49,7 +55,7 @@ const Calculator = () => {
     <>
       <form
         className="calculator bg-white lg:rounded-bl-[25px] lg:rounded-tl-[25px] w-full"
-        onSubmit={handleSubmit((data) => console.log(data))}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <div className="header lg:flex items-center justify-between mb-5">
           <h1 className="text-3xl font-bold">Mortgage Calculator</h1>
@@ -194,7 +200,6 @@ const Calculator = () => {
 
           <div className="flex gap-2.5 mt-5">
             <button
-              onClick={calculateRepayments}
               className="cursor-pointer flex calculate-btn font-bold justify-center w-full lg:w-auto"
               type="submit"
             >
