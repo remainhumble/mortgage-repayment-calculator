@@ -24,7 +24,7 @@ const Calculator = () => {
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
@@ -35,14 +35,14 @@ const Calculator = () => {
   return (
     <>
       <form
-        className="calculator bg-white lg:rounded-bl-[25px] lg:rounded-tl-[25px] w-full "
+        className="calculator bg-white lg:rounded-bl-[25px] lg:rounded-tl-[25px] w-full"
         onSubmit={handleSubmit((data) => console.log(data))}
       >
         <div className="header lg:flex items-center justify-between mb-5">
           <h1 className="text-3xl font-bold">Mortgage Calculator</h1>
-          <p className="cursor-pointer">
+          <button className="cursor-pointer" onClick={() => reset()}>
             <u>Clear All</u>
-          </p>
+          </button>
         </div>
         <div className="inputs">
           <label htmlFor="mortgage-amount">Mortgage Amount</label>
@@ -58,7 +58,6 @@ const Calculator = () => {
             <input
               type="number"
               id="mortgage-amount"
-       
               className={`number-input ${
                 errors.mortgageAmount
                   ? "border-[1.5px] border-solid border-[hsl(4,69%,50%)] rounded-[0_6px_6px_0]"
@@ -66,7 +65,6 @@ const Calculator = () => {
               }`}
               {...register("mortgageAmount", {
                 required: "This field is required",
-               
               })}
             />
             <br></br>
@@ -77,8 +75,8 @@ const Calculator = () => {
             </p>
           )}
           <br />
-          <div className="lg:flex justify-between">
-            <div>
+          <div className="lg:flex gap-5">
+            <div className="w-full">
               <label htmlFor="mortgage-term">Mortgage Term</label>
               <br></br>
               <div className="right-addon">
@@ -92,7 +90,6 @@ const Calculator = () => {
                   }`}
                   {...register("mortgageTerm", {
                     required: "This field is required",
-         
                   })}
                 />
 
@@ -108,8 +105,8 @@ const Calculator = () => {
                 </p>
               )}
             </div>
-            <br></br>
-            <div>
+
+            <div className="w-full">
               <label htmlFor="interest-rate">Interest Rate</label>
               <br></br>
               <div className="right-addon">
@@ -123,7 +120,6 @@ const Calculator = () => {
                   }`}
                   {...register("interestRate", {
                     required: "This field is required",
-        
                   })}
                 />
                 <div
@@ -160,7 +156,6 @@ const Calculator = () => {
             <label className="radio font-bold">
               <input
                 type="radio"
-            
                 value="interest-only"
                 id="interest-only"
                 checked={selectedOption === "interest-only"}

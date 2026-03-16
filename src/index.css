@@ -38,7 +38,7 @@ body {
 }
 
 .calculator {
-  padding: 17px;
+  padding: 32px;
 }
 
 .inputs {
@@ -66,17 +66,15 @@ input[type="number"] {
   outline: none;
 }
 
-
 /* when the input lives inside an addon wrapper, highlight the wrapper too
    also catch the occasional :active state on the input using :has */
 .left-addon:focus-within,
 .right-addon:focus-within,
 .left-addon:has(input:active),
-.right-addon:has(input:active)
-  {
-    border-color: var(--lime);
-    border-width: 2px;
-  }
+.right-addon:has(input:active) {
+  border-color: var(--lime);
+  border-width: 2px;
+}
 
 /* give the addon itself a lime background when its input is active */
 .left-addon:focus-within .addon,
@@ -91,6 +89,7 @@ input[type="number"] {
   display: inline-flex;
   align-items: center;
   padding: 0.25rem 0.5rem;
+  cursor: pointer;
 }
 
 input[type="radio"] {
@@ -154,5 +153,12 @@ legend {
 }
 
 .results {
-  padding: 17px;
+  padding: 35px;
+}
+
+@media (min-width: 760px) {
+  .calculator {
+    padding: 36px;
+    width: 50%;
+  }
 }
