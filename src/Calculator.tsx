@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // developers should ensure they are familiar with React Hooks and the library's API to maximize its benefits
 import "./index.css";
 
+type FormValues = {
+  mortgageAmount: number;
+  mortgageTerm: number;
+  interestRate: number;
+  selectedOption: "repayment" | "interest-only" | "";
+};
+
 const Calculator = () => {
-  const [mortgageAmount, setMortgageAmount] = useState("");
-  const [mortgageTerm, setMortgageTerm] = useState("");
-  const [interestRate, setInterestRate] = useState("");
-  const [selectedOption, setSelectedOption] = useState(""); // Track selected value
+  const [selectedOption, setSelectedOption] = useState<
+    "repayment" | "interest-only" | ""
+  >(""); // Track selected value
 
   const calculateRepayments = () => {};
 
   // Handle radio change
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption(event.target.value);
+    setSelectedOption(event.target.value as "repayment" | "interest-only");
   };
 
   const {
@@ -20,7 +26,11 @@ const Calculator = () => {
     handleSubmit,
 
     formState: { errors },
-  } = useForm();
+  } = useForm<FormValues>({
+    defaultValues: {
+      selectedOption: "",
+    },
+  });
 
   return (
     <>
@@ -48,6 +58,7 @@ const Calculator = () => {
             <input
               type="number"
               id="mortgage-amount"
+       
               className={`number-input ${
                 errors.mortgageAmount
                   ? "border-[1.5px] border-solid border-[hsl(4,69%,50%)] rounded-[0_6px_6px_0]"
@@ -55,7 +66,7 @@ const Calculator = () => {
               }`}
               {...register("mortgageAmount", {
                 required: "This field is required",
-                min: { value: 1, message: "Must be greater than zero" },
+               
               })}
             />
             <br></br>
@@ -81,7 +92,7 @@ const Calculator = () => {
                   }`}
                   {...register("mortgageTerm", {
                     required: "This field is required",
-                    min: { value: 1, message: "Must be greater than zero" },
+         
                   })}
                 />
 
@@ -112,7 +123,7 @@ const Calculator = () => {
                   }`}
                   {...register("interestRate", {
                     required: "This field is required",
-                    min: { value: 0, message: "Must be a positive number" },
+        
                   })}
                 />
                 <div
@@ -134,26 +145,39 @@ const Calculator = () => {
             <label className="radio font-bold">
               <input
                 type="radio"
-                name="mortgage-type"
                 value="repayment"
                 id="repayment"
-    
-                onChange={handleChange}
+                checked={selectedOption === "repayment"}
+                {...register("selectedOption", {
+                  required: "This field is required",
+                })}
+                onChange={(event) => {
+                  handleChange(event);
+                }}
               />
               Repayment
             </label>
             <label className="radio font-bold">
               <input
                 type="radio"
-                name="mortgage-type"
+            
                 value="interest-only"
                 id="interest-only"
                 checked={selectedOption === "interest-only"}
-                onChange={handleChange}
+                {...register("selectedOption", {
+                  required: "This field is required",
+                })}
+                onChange={(event) => {
+                  handleChange(event);
+                }}
               />
               Interest Only
             </label>
-            <p style={{ color: "#d73328" }}>{JSON.stringify(errors.selectedOption?.message)}</p>
+            {errors.selectedOption && (
+              <p style={{ color: "#d73328" }}>
+                {String(errors.selectedOption.message)}
+              </p>
+            )}
           </fieldset>
 
           <div className="flex gap-2.5 mt-5">
