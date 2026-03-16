@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form"; // developers should ensure they are 
 import "./index.css";
 
 type FormValues = {
-  mortgageAmount: number;
-  mortgageTerm: number;
-  interestRate: number;
+  mortgageAmount: number | "";
+  mortgageTerm: number | "";
+  interestRate: number | "";
   selectedOption: "repayment" | "interest-only" | "";
 };
 
@@ -28,9 +28,22 @@ const Calculator = () => {
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
+      mortgageAmount: "",
+      mortgageTerm: "",
+      interestRate: "",
       selectedOption: "",
     },
   });
+
+  const handleClear = () => {
+    setSelectedOption("");
+    reset({
+      mortgageAmount: "",
+      mortgageTerm: "",
+      interestRate: "",
+      selectedOption: "",
+    });
+  };
 
   return (
     <>
@@ -40,7 +53,11 @@ const Calculator = () => {
       >
         <div className="header lg:flex items-center justify-between mb-5">
           <h1 className="text-3xl font-bold">Mortgage Calculator</h1>
-          <button className="cursor-pointer" onClick={() => reset()}>
+          <button
+            type="button"
+            className="cursor-pointer"
+            onClick={handleClear}
+          >
             <u>Clear All</u>
           </button>
         </div>
