@@ -14,7 +14,6 @@
   --slate-500: hsl(200, 26%, 54%);
   --slate-700: hsl(200, 24%, 40%);
   --slate-900: hsl(202, 55%, 16%);
-  --lime: hsl(61, 70%, 52%);
 }
 
 html,
@@ -154,13 +153,23 @@ legend {
 
 .results {
   padding: 35px;
-  bottom: 0;
-  right: 0;
+}
+
+.your-results {
+  padding: 2rem;
+}
+
+.monthly, .total {
+  padding: 1.5rem 0;
 }
 
 @media (min-width: 760px) {
   .calculator, .results {
     padding: 36px;
-    max-width: 50%;
+    min-width: 50%;
   }
+}
+
+:root {
+  --lime: hsl(61, 70%, 52%);
 }
