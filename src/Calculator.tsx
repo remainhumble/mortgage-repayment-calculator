@@ -80,6 +80,7 @@ const Calculator = ({ onCalculate }: CalculatorProps) => {
             </div>
             <input
               type="number"
+              step="0.01"
               id="mortgage-amount"
               className={`number-input ${
                 errors.mortgageAmount
@@ -135,6 +136,7 @@ const Calculator = ({ onCalculate }: CalculatorProps) => {
               <div className="right-addon">
                 <input
                   type="number"
+                  step="0.01"
                   id="interest-rate"
                   className={`number-input ${
                     errors.interestRate

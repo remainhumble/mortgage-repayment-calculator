@@ -1,6 +1,12 @@
 import React from "react";
 import "./index.css";
 
+type CalculationResult = {
+  monthly: number;
+  total: number;
+  interest: number;
+};
+
 type ResultsProps = {
   data: {
     mortgageAmount?: number | "";
@@ -8,15 +14,17 @@ type ResultsProps = {
     interestRate?: number | "";
     selectedOption?: "repayment" | "interest-only" | "";
   } | null;
+  result: CalculationResult | null;
 };
 
-const Results = ({ data }: ResultsProps) => {
+const Results = ({ data, result }: ResultsProps) => {
   const hasData = Boolean(
-    data &&
-    (data.mortgageAmount ||
-      data.mortgageTerm ||
-      data.interestRate ||
-      data.selectedOption),
+    result ||
+    (data &&
+      (data.mortgageAmount ||
+        data.mortgageTerm ||
+        data.interestRate ||
+        data.selectedOption)),
   );
 
   return (
@@ -50,8 +58,12 @@ const Results = ({ data }: ResultsProps) => {
               <h6 className="text-slate-300">Your monthly repayments</h6>
               <div className="monthly">
                 <span className="text-(--lime) text-6xl font-bold">
-                  {/* Placeholder for calculated monthly repayments */}
-                  £X,XXX.XX
+                  {result
+                    ? `£${result.monthly.toLocaleString("en-GB", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}`
+                    : "£0.00"}
                 </span>
               </div>
               <hr />
@@ -60,8 +72,12 @@ const Results = ({ data }: ResultsProps) => {
                   Total you'll repay over the term.
                 </h6>
                 <span className="text-white text-2xl font-bold">
-                  {/* Placeholder for total repayment */}
-                  £XXX,XXX.XX
+                  {result
+                    ? `£${result.total.toLocaleString("en-GB", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}`
+                    : "£0.00"}
                 </span>
               </div>
             </div>
