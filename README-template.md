@@ -21,6 +21,8 @@ This is a solution to the [Mortgage repayment calculator challenge on Frontend M
 
 ## Overview
 
+This is a responsive mortgage repayment calculator built with React and Vite. The application allows users to input mortgage details and instantly calculate monthly payments, total repayment amounts, and interest paid over the loan term. It features form validation, keyboard accessibility, and an intuitive user interface optimized for all device sizes.
+
 ### The challenge
 
 Users should be able to:
@@ -33,15 +35,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./localhost_5173_mortgage-repayment-calculator-main_%20(1).png)
+![](./localhost_5173_mortgage-repayment-calculator-main_.png)
 
 ### Links
 
@@ -49,6 +44,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
+
+I started by breaking down the project requirements into components: a form for mortgage inputs, calculation logic, and a results display. I used React hooks to manage form state and validation, ensuring real-time calculations as users input data. The layout was designed mobile-first using CSS Grid and Flexbox for responsive behavior across all device sizes. I implemented keyboard navigation and focus management for accessibility, and added visual feedback for form validation errors.
 
 ### Built with
 
@@ -58,60 +55,64 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Learned how to show validation errors in UI/UX (required fields, numeric ranges).
+Practiced responsive layout with Tailwind + CSS Grid/Flexbox (mobile-first, large breakpoint).
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Areas to enhance in future iterations:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- **Advanced Calculation Features**: Add support for overpayments, extra payments, and amortization schedules
+- **Data Persistence**: Implement localStorage to save user calculations and history
+- **Export Functionality**: Allow users to download results as PDF or CSV
+- **Refinement Comparison**: Enable side-by-side comparison of different mortgage scenarios
+- **Interest Rate Trends**: Integrate real-time interest rate data from APIs
+- **Performance Optimization**: Implement code splitting and lazy loading for faster initial load
+- **Unit Tests**: Add Jest and React Testing Library tests for critical components
+- **Mobile App**: Convert to React Native for iOS/Android deployment
 
 ### Useful resources
 
-- [How to Deploy Vite + React App to GitHub Pages in 5 Minutes! 🌍](https://www.youtube.com/watch?v=XQAaAQnw2Mk&t=199s) -How to Deploy Vite + React App to GitHub Pages in 5 Minutes! 
+- [React Hook Form](https://react-hook-form.com/) - A popular third-party plugin for React projects.
+- [How to Deploy Vite + React App to GitHub Pages in 5 Minutes! 🌍](https://www.youtube.com/watch?v=XQAaAQnw2Mk&t=199s) - How to Deploy Vite + React App to GitHub Pages in 5 Minutes! 
 🚀 In this quick and easy tutorial, learn how to deploy your Vite + React application to GitHub Pages for free!
   Whether you're building a portfolio, personal project, or launching a startup, hosting your Vite React app on GitHub Pages is a fast and cost-effective solution.
 
 - [transform](https://transform.tools/css-to-tailwind) - This site converts Vanilla CSS to Tailwind.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ### AI Collaboration
 
 Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
 
+Used this assistant as a coding mentor / pair-programmer during the project.
+
 - What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
+
+Only GitHub Copilot
+
 - How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+
+Asked for guidance on how to write/read/structure React + Tailwind code and README sections.
+Used suggestions for form validation, UI behavior, and documentation wording.
+Got step-by-step support while preserving a “do it yourself” learning.
+
+- What worked well? 
+
+Quick feedback loop on copy + content.
+Good prompts for “what to write in README” and where to improve.
+Helped translate technical behavior into plain explanation.
+
+What didn't?
+
+Still choosing exact text to match my voice; AI gives a starting point, not final prose.
+Sometimes the first answer is high-level; needed follow-ups for specifics (fine for learning stage).
 
 ## Author
 
