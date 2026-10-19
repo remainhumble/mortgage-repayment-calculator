@@ -1,22 +1,31 @@
-# Frontend Mentor - Mortgage repayment calculator
+# Frontend Mentor - Mortgage repayment calculator solution
 
-![Design preview for the Mortgage repayment calculator coding challenge](./preview.jpg)
+This is a solution to the [Mortgage repayment calculator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+## Overview
 
-## The challenge
+This is a responsive mortgage repayment calculator built with React and Vite. The application allows users to input mortgage details and instantly calculate monthly payments, total repayment amounts, and interest paid over the loan term. It features form validation, keyboard accessibility, and an intuitive user interface optimized for all device sizes.
 
-Your challenge is to build out this mortgage repayment calculator and get it looking as close to the design as possible.
+### The challenge
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to: 
+Users should be able to:
 
 - Input mortgage information and see monthly repayment and total repayment amounts after submitting the form
 - See form validation messages if any field is incomplete
@@ -24,85 +33,89 @@ Your users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](./localhost_5173_mortgage-repayment-calculator-main_%20(1).png)
+![](./localhost_5173_mortgage-repayment-calculator-main_.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: (https://github.com/remainhumble/mortgage-repayment-calculator)
+- Live Site URL: (https://mortgage-repayment-calculator-ashy-tau.vercel.app/)
 
-If you would like the Figma design file to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+I started by breaking down the project requirements into components: a form for mortgage inputs, calculation logic, and a results display. I used React hooks to manage form state and validation, ensuring real-time calculations as users input data. The layout was designed mobile-first using CSS Grid and Flexbox for responsive behavior across all device sizes. I implemented keyboard navigation and focus management for accessibility, and added visual feedback for form validation errors.
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+### Built with
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
 
-## Using AI coding assistants
+**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+### What I learned
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+Learned how to show validation errors in UI/UX (required fields, numeric ranges).
+Practiced responsive layout with Tailwind + CSS Grid/Flexbox (mobile-first, large breakpoint).
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+### Continued development
 
-## Building your project
+Areas to enhance in future iterations:
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+- **Advanced Calculation Features**: Add support for overpayments, extra payments, and amortization schedules
+- **Data Persistence**: Implement localStorage to save user calculations and history
+- **Export Functionality**: Allow users to download results as PDF or CSV
+- **Refinement Comparison**: Enable side-by-side comparison of different mortgage scenarios
+- **Interest Rate Trends**: Integrate real-time interest rate data from APIs
+- **Performance Optimization**: Implement code splitting and lazy loading for faster initial load
+- **Unit Tests**: Add Jest and React Testing Library tests for critical components
+- **Mobile App**: Convert to React Native for iOS/Android deployment
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+### Useful resources
 
-## Deploying your project
+- [React Hook Form](https://react-hook-form.com/) - A popular third-party plugin for React projects.
+- [How to Deploy Vite + React App to GitHub Pages in 5 Minutes! 🌍](https://www.youtube.com/watch?v=XQAaAQnw2Mk&t=199s) - How to Deploy Vite + React App to GitHub Pages in 5 Minutes! 
+🚀 In this quick and easy tutorial, learn how to deploy your Vite + React application to GitHub Pages for free!
+  Whether you're building a portfolio, personal project, or launching a startup, hosting your Vite React app on GitHub Pages is a fast and cost-effective solution.
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+- [transform](https://transform.tools/css-to-tailwind) - This site converts Vanilla CSS to Tailwind.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+### AI Collaboration
 
-## Create a custom `README.md`
+Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+Used this assistant as a coding mentor / pair-programmer during the project.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+Only GitHub Copilot
 
-## Submitting your solution
+- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+Asked for guidance on how to write/read/structure React + Tailwind code and README sections.
+Used suggestions for form validation, UI behavior, and documentation wording.
+Got step-by-step support while preserving a “do it yourself” learning.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+- What worked well? 
 
-## Sharing your solution
+Quick feedback loop on copy + content.
+Good prompts for “what to write in README” and where to improve.
+Helped translate technical behavior into plain explanation.
 
-There are multiple places you can share your solution:
+What didn't?
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+Still choosing exact text to match my voice; AI gives a starting point, not final prose.
+Sometimes the first answer is high-level; needed follow-ups for specifics (fine for learning stage).
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+## Author
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
 
-## Got feedback for us?
+- Frontend Mentor - [@remainhumble](https://www.frontendmentor.io/profile/remainhumble)
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
