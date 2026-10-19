@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // developers should ensure they are familiar with React Hooks and the library's API to maximize its benefits
+// @ts-ignore -- CSS imports are handled by the bundler.
 import "./index.css";
 
 type FormValues = {
