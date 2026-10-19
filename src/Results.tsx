@@ -1,4 +1,6 @@
 import React from "react";
+import IllustrationEmpty from "../assets/images/illustration-empty.svg?react";
+// @ts-ignore -- CSS imports are handled by the bundler.
 import "./index.css";
 
 type CalculationResult = {
@@ -32,9 +34,9 @@ const Results = ({ data, result }: ResultsProps) => {
       <div className="results bg-[#122f3f] lg:rounded-bl-[50px] lg:rounded-br-[25px] lg:rounded-tr-[25px]">
         {!hasData ? (
           <div className="flex flex-col justify-center items-center h-full">
-            <img
-              src="./assets/images/illustration-empty.svg"
-              alt="Mortgage Results"
+            <IllustrationEmpty
+              role="img"
+              aria-label="Mortgage Results"
               className="lg:w-64"
             />
             <h2 className="text-white text-2xl font-bold">

@@ -58,7 +58,7 @@ const App = () => {
 
   return (
     <>
-      <div className="flex lg:flex-row flex-col lg:scale-[0.7]">
+      <div className="flex lg:flex-row flex-col lg:scale-[0.7] bg-white lg:rounded-[50px]">
         <Calculator onCalculate={handleCalculate} />
         <Results data={submittedData} result={calculation} />
       </div>

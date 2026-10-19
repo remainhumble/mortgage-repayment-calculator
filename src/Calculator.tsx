@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // developers should ensure they are familiar with React Hooks and the library's API to maximize its benefits
+import calculatorIcon from "../assets/images/icon-calculator.svg";
 // @ts-ignore -- CSS imports are handled by the bundler.
 import "./index.css";
 
@@ -206,7 +207,7 @@ const Calculator = ({ onCalculate }: CalculatorProps) => {
               className="cursor-pointer flex calculate-btn font-bold justify-center w-full lg:w-auto"
               type="submit"
             >
-              <img src="./assets/images/icon-calculator.svg" alt="Calculate" />
+              <img src={calculatorIcon} alt="" />
               Calculate Repayments
             </button>
           </div>
